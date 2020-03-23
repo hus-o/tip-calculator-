@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<label for="bill">Enter bill amount</label>
+<input type="number" id="bill">
+
+<label for="rating">Enter rating</label>
+<input type="number" id="rating" min="1" max="5" step="1">
+
+<button type="button" onclick="tipCalculator()">Submit</button>
+
+<script>
+function tipCalculator() {
+    let x, text;
+    let y, text;
+    let tip;
+
+    x = document.getElementById("bill").value;
+    y = document.getElementById("rating").value;
+    switch(y) {
+        case 1:
+            tip = 0;
+            break;
+        case 2:
+            tip = x * 0.05;
+            break;
+        case 3:
+            tip = x * 0.10;
+            break;
+        case 4:
+            tip = x * 0.15;
+            break;
+        case 5:
+            tip = x * 0.20;
+            break;
+        default:
+            tip = x * 0.20;
+    }
+
+    }
+    document.getElementById("demo").innerHTML = text;
+  }
+</script>
+
+
+
+
+
+
+<!--         <script>
+
+        do {
+        let bill = prompt("Please enter your bill amount, excluding currency signs");
+        console.log(typeof bill);
+        } while (typeof bill !== "number")
+
+
+        /      let rating = prompt("Please rate the service between 1-10")
+
+
+        </script> -->
+</body>
+</html>
