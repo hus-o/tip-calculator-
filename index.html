@@ -4,61 +4,50 @@
 <body>
 <label for="bill">Enter bill amount</label>
 <input type="number" id="bill">
-
-<label for="rating">Enter rating</label>
-<input type="number" id="rating" min="1" max="5" step="1">
-
-<button type="button" onclick="tipCalculator()">Submit</button>
-
+<br>
+<label for="rating">Enter rate the service between 1 and 5 (5 being excellent)</label>
+<input type="number" id="rating" min="1" max="5">
+<br>
+<button type="button" id="calculateTip">Submit</button>
+<p id="output"></p>
 <script>
+document.getElementById ("calculateTip").addEventListener ("click", tipCalculator);
 function tipCalculator() {
-    let x, text;
-    let y, text;
-    let tip;
+    let x, y, tip, text;
 
-    x = document.getElementById("bill").value;
-    y = document.getElementById("rating").value;
+    x = Number(document.getElementById("bill").value);
+    y = Number(document.getElementById("rating").value);
     switch(y) {
         case 1:
             tip = 0;
+            totalBill = x + tip
+            text = `Hi your total bill, including tip is £${totalBill}`
             break;
         case 2:
             tip = x * 0.05;
+            totalBill = x + tip
+            text = `Hi your total bill, including tip is £${totalBill}`
             break;
         case 3:
             tip = x * 0.10;
+            totalBill = x + tip
+            text = `Hi your total bill, including tip is £${totalBill}`
             break;
         case 4:
             tip = x * 0.15;
+            totalBill = x + tip
+            text = `Hi your total bill, including tip is £${totalBill}`
             break;
         case 5:
             tip = x * 0.20;
+            totalBill = x + tip
+            text = `Hi your total bill, including tip is £${totalBill}`
             break;
         default:
-            tip = x * 0.20;
+            text = "Hi please input a rating between 1 to 5"
     }
-
-    }
-    document.getElementById("demo").innerHTML = text;
+    document.getElementById("output").innerHTML = text;
   }
 </script>
-
-
-
-
-
-
-<!--         <script>
-
-        do {
-        let bill = prompt("Please enter your bill amount, excluding currency signs");
-        console.log(typeof bill);
-        } while (typeof bill !== "number")
-
-
-        /      let rating = prompt("Please rate the service between 1-10")
-
-
-        </script> -->
 </body>
 </html>
